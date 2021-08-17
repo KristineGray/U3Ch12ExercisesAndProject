@@ -4,13 +4,19 @@ import random
 # 12.8.3. Part C: Modify Values
 
 # Code your assign_tickets function here:
-
+def assign_tickets(name_list):
+    name_dict = {}
+    for name in name_list:
+        name_dict[name] = random.randint(100, 500)
+    return name_dict
 
 # Code the Part C function here:
 
 
 def main():
   names = ['Caleb', 'Naomi', 'Owen', 'Ava', 'Aaron', 'Lydia']
+  ticket_holders = assign_tickets(names)
+  print(ticket_holders)
 
   
 if __name__ == '__main__':
