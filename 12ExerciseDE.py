@@ -7,18 +7,23 @@ import string
 def character_count(a_string):
     counts = {}
     for character in a_string:
-        upper_char = character.upper()
-        if upper_char not in counts.keys():
-            counts[upper_char] = 1
-        else:
-            counts[upper_char] += 1
+        lower_char = character.lower()
+        if character.isalpha():
+            if lower_char not in counts.keys():
+                counts[lower_char] = 1
+            else:
+                counts[lower_char] += 1
     return counts
 
 def main():
     # text = "Python ROCKS!"
     text = "Balloons, bookkeepers, and bubbles."
     results = character_count(text)
-    print(results)
+    results_keys = list(results.keys())
+    results_keys.sort()
+    print(f"\nThe character counts for '{text}' are:")
+    for key in results_keys:
+        print(f'{key}: {results[key]}')
   
 if __name__ == '__main__':
     main()
